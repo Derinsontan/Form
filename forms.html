@@ -21,7 +21,7 @@
     background-color: #f5f5f5;
     background-color: darkgrey;
     background-image: linear-gradient(to right , darkgrey, #eeee);
-    
+
 }
 
 .form-container, .thank-you-container {
@@ -58,22 +58,34 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    
-    
+
+
 }
 .button{
+    
     text-align: right;
     padding: 0;
     margin: 0;
     width: 100%;
+    margin-left: 20px;
+    
+    
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #155d19;
 }
 
 .thumbs-up {
     font-size: 4rem;
+}
+.cancel-btn {
+  background-color: red;
+  margin-left: auto;
+
+}
+.cancel-btn:hover {
+    background-color: rgb(118, 17, 17);
 }
 
     </style>
@@ -81,28 +93,34 @@ button:hover {
 <body>
     <div class="form-container">
         <h2>Personal Information</h2>
-        <form action="thankyou.html" method="post">
+        <form id="info-form">
             <label for="fullName">Full Name</label>
             <input type="text" id="fullName" name="fullName" placeholder="Micheal Keating" required>
-
+    
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="example@email.com" required>
-
+    
             <label for="address">Address</label>
             <input type="text" id="address" name="address" placeholder="123 Main St" required>
-
+    
             <label for="phone">Phone Number</label>
             <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
-            
-
+    
             <div class="button">
                 <button type="submit">Submit</button>
-                
-        
-            </div>        
+                <button type="reset" class="cancel-btn">Cancel</button>
+            </div>
         </form>
     </div>
     
-
+    
+    <div id="thank-you-container" class="thank-you-container" style="display: none;">
+        <div class="thumbs-up">👍</div>
+        <h2>Thank You!</h2>
+        <p>Your information has been submitted successfully.</p>
+        <div id="display-info" style="margin-top: 15px; text-align: left;"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
